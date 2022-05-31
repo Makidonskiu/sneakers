@@ -1,0 +1,94 @@
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+.drawer{
+    position: absolute;
+    width: 480px;
+    height: 100%;
+    right: 0;
+    background: #fff;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
+    padding: 30px;
+    
+    display: flex;
+    flex-direction: column;
+
+    .items{
+        overflow: auto;
+        margin-bottom: 40px;
+    }
+    
+    h2{
+        margin: 0;
+
+        img{
+            cursor: pointer;
+        }
+    }
+
+    .items{
+    flex: 1;
+    }
+}
+
+.cartTotalBlock{
+    ul{
+        li{
+            margin-bottom: 40px;
+            div{
+                flex: 1;
+                border-bottom: 1px dashed #dfdfdf;
+                position: relative;
+                top: -4px;
+                margin: 0 7px;
+            }
+        }
+        
+    }
+
+    .greenButton{
+        position: relative;
+
+        &:hover{
+            img{
+                transform: translateX(5px);
+            }
+        }
+
+        img{
+            position: absolute;
+            right: 40px;
+            top: 21px;
+            transition: transform 0.2s ease-in-out;
+        }
+    }
+}
+
+.greenButton{
+    width: 100%;
+    height: 55px;
+    background: #9dd558;
+    border-radius: 18px;
+    border: 0;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease-in-out;
+
+    &:hover{
+        background: lighten($color: #9dd558, $amount: 5%);
+    }
+
+    &:active{
+        background: darken($color: #9dd558, $amount: 5%);
+    }
+}
