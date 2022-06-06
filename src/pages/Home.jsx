@@ -33,6 +33,7 @@ export const Home = () => {
                   onFavorites={(obj) => saveFavorites(obj)}
                   isFavorite={true}
                   loading={isLoading}
+                  parentId={objCard.parentId}
                 />
               ))}
       </div>

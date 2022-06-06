@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 
 import { Header, Drawer } from './components/index';
-import { Home, Favorites } from './pages/index';
+import { Home, Favorites, Orders } from './pages/index';
 
 export const myContext = createContext();
 
@@ -118,6 +118,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </div>
     </myContext.Provider>

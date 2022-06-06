@@ -9,7 +9,7 @@ export const Header = ({ onClickCart, cartItems = 0 }) => {
           <img width={40} height={40} src="/img/logo.svg" alt="Logo" />
           <div>
             <h3 className="text-uppercase">React Sneakers</h3>
-            <p className="opacity-5">Магазин лучших кроссовок</p>
+            <p className="opacity-5">Магазин лучших кроссовок от Сани</p>
           </div>
         </div>
       </Link>
@@ -19,7 +19,7 @@ export const Header = ({ onClickCart, cartItems = 0 }) => {
           <span>{cartItems.reduce((acc, item) => acc + Number(item.price), 0)} грн.</span>
         </li>
         <li>
-          <Link to="favorites">
+          <Link to="/favorites">
             <img
               className="cu-p mr-20"
               width={18}
@@ -30,7 +30,9 @@ export const Header = ({ onClickCart, cartItems = 0 }) => {
           </Link>
         </li>
         <li>
-          <img className="cu-p" width={30} height={30} src="/img/user.svg" alt="Пользователь" />
+          <Link to="/orders">
+            <img className="cu-p" width={30} height={30} src="/img/user.svg" alt="Пользователь" />
+          </Link>
         </li>
       </ul>
     </header>
