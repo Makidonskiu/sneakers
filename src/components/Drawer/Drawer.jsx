@@ -89,7 +89,7 @@ export const Drawer = ({ items, onClose, onRemove }) => {
                 ? `Ваш заказ №${OrderId} скоро будет передан курьерской доставке`
                 : 'Добавьте хотябы одну пару кроссовокб чтобы сделать заказ.'
             }
-            image={isOrderComplite ? 'img/complete-order.jpg' : 'img/empty-cart.jpg'}
+            image={isOrderComplite ? "img/complete-order.jpg" : "img/empty-cart.jpg"}
           />
         )}
       </div>

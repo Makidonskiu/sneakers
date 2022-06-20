@@ -29,7 +29,7 @@ export const Card = ({
     <div className={style.card}>
       <div className={style.favorite}>
         <img
-          src={favorite ? '/img/unliked.svg' : '/img/liked.svg'}
+          src={favorite ? "img/unliked.svg" : "img/liked.svg"}
           alt="Heart"
           onClick={clickFavorite}
         />
@@ -45,7 +45,7 @@ export const Card = ({
           className={style.button}
           width={30}
           height={30}
-          src={isAddedItems(parentId) ? '/img/btn-checked.svg' : '/img/btn-plus.svg'}
+          src={isAddedItems(parentId) ? "img/btn-checked.svg" : "img/btn-plus.svg"}
           alt="Plus"
           onClick={onClickPlus}
         />
