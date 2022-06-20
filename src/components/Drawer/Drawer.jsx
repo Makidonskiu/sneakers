@@ -1,7 +1,7 @@
 import React from 'react';
 import { myContext } from '../../App';
 import { Info } from '../Info';
-import axios from 'axios'
+import axios from 'axios';
 
 import style from './Drawer.module.scss';
 
@@ -9,7 +9,7 @@ const delay = () => new Promise(resolve => setTimeout(resolve, 500))
 
 export const Drawer = ({ items, onClose, onRemove }) => {
   const {cartItems, setCartItems } = React.useContext(myContext);
-  const [OrderId, setOrderId] = React.useState(null);
+  const [OrderId, setOrderId] = React.useState();
   const [isOrderComplite, setIsOrderComplite] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -17,10 +17,10 @@ export const Drawer = ({ items, onClose, onRemove }) => {
     try {
       setIsLoading(true)
       const {data} = await axios.post('https://62964a9d75c34f1f3b2d2299.mockapi.io/order', {
-        items: cartItems,
+        items: cartItems
       });
       
-      setOrderId(data.id)
+      setOrderId(data.parentId)
       setIsOrderComplite(true);
       setCartItems([]);
 
@@ -39,7 +39,7 @@ export const Drawer = ({ items, onClose, onRemove }) => {
       <div className={style.drawer}>
         <h2 className="mb-30 d-flex justify-between">
           Корзина{' '}
-          <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove" onClick={onClose} />
+          <img className="removeBtn" src="img/btn-remove.svg" alt="Remove" onClick={onClose} />
         </h2>
 
         {items.length > 0 ? (
@@ -61,7 +61,7 @@ export const Drawer = ({ items, onClose, onRemove }) => {
 
                   <img
                     className="removeBtn"
-                    src="/img/btn-remove.svg"
+                    src="img/btn-remove.svg"
                     alt="Remove"
                     onClick={() => onRemove(item.id)}
                   />
@@ -77,7 +77,7 @@ export const Drawer = ({ items, onClose, onRemove }) => {
                 </li>
               </ul>
               <button disabled={isLoading} onClick={onClickOrder} className={style.greenButton}>
-                Оформить <img src="/img/arrow.svg" alt="Arrow" />
+                Оформить <img src="img/arrow.svg" alt="Arrow" />
               </button>
             </div>
           </>
@@ -89,7 +89,7 @@ export const Drawer = ({ items, onClose, onRemove }) => {
                 ? `Ваш заказ №${OrderId} скоро будет передан курьерской доставке`
                 : 'Добавьте хотябы одну пару кроссовокб чтобы сделать заказ.'
             }
-            image={isOrderComplite ? '/img/complete-order.jpg' : '/img/empty-cart.jpg'}
+            image={isOrderComplite ? 'img/complete-order.jpg' : 'img/empty-cart.jpg'}
           />
         )}
       </div>

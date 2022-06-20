@@ -13,10 +13,11 @@ export const Card = ({
   onAddCart,
   onFavorites,
   isFavorite = false,
+  parentId
 }) => {
   const {isAddedItems} = React.useContext(myContext)
   const [favorite, setFaforite] = React.useState(isFavorite);
-  const obj = { id, parentId: id, title, price, imageUrl }
+  const obj = { id, parentId, title, price, imageUrl }
 
   const clickFavorite = () => {
     setFaforite(!favorite);
@@ -28,7 +29,7 @@ export const Card = ({
     <div className={style.card}>
       <div className={style.favorite}>
         <img
-          src={favorite ? '/img/unliked.svg' : '/img/liked.svg'}
+          src={favorite ? 'img/unliked.svg' : 'img/liked.svg'}
           alt="Heart"
           onClick={clickFavorite}
         />
@@ -44,7 +45,7 @@ export const Card = ({
           className={style.button}
           width={30}
           height={30}
-          src={isAddedItems(id) ? '/img/btn-checked.svg' : '/img/btn-plus.svg'}
+          src={isAddedItems(parentId) ? 'img/btn-checked.svg' : 'img/btn-plus.svg'}
           alt="Plus"
           onClick={onClickPlus}
         />
