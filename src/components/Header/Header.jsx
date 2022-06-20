@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Header = ({ onClickCart, cartItems = 0 }) => {
   return (
     <header className="d-flex justify-between align-center p-40">
-      <Link to="/">
+      <Link to="/sneakers">
         <div className="d-flex align-center">
           <img width={40} height={40} src="img/logo.svg" alt="Logo" />
           <div>

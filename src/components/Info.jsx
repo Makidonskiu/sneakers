@@ -17,7 +17,7 @@ export const Info = ({title, image , decscription}) => {
       />
       <h2>{title}</h2>
       <p className="opacity- 6">{decscription}</p>
-      <Link to="/">
+      <Link to="/sneakers">
         <button onClick={()=> setCartOpened(false)} className={style.greenButton}>
           <img src="img/arrow.svg" alt="Arrow" />
           Вернуться назад
