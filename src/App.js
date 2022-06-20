@@ -116,9 +116,9 @@ function App() {
         )}
         <Header cartItems={cartItems} onClickCart={() => setCartOpened(!cartOpened)} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="" element={<Home />} />
+          <Route path="favorites" element={<Favorites />} />
+          <Route path="orders" element={<Orders />} />
         </Routes>
       </div>
     </myContext.Provider>

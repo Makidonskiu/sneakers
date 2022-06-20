@@ -19,7 +19,7 @@ export const Info = ({title, image , decscription}) => {
       <p className="opacity- 6">{decscription}</p>
       <Link to="/">
         <button onClick={()=> setCartOpened(false)} className={style.greenButton}>
-          <img src="img/arrow.svg" alt="Arrow" />
+          <img src="/img/arrow.svg" alt="Arrow" />
           Вернуться назад
         </button>
       </Link>
